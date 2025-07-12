@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Responsive Inspector</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Responsive Inspector</h1>
+      <div id="viewport-info">
+        <span id="dimensions">--</span>
+        <span id="breakpoint">--</span>
+      </div>
+    </header>
+
+    <div class="controls">
+      <div class="control-group">
+        <button id="toggleGrid" class="tool-btn">
+          <span class="icon">&#8862;</span>
+          <span>Toggle Grid (G)</span>
+        </button>
+        <button id="measureMode" class="tool-btn">
+          <span class="icon">&#128207;</span>
+          <span>Measure (M)</span>
+        </button>
+        <button id="checkContrast" class="tool-btn">
+          <span class="icon">&#127752;</span>
+          <span>Contrast (C)</span>
+        </button>
+      </div>
+
+      <div class="settings">
+        <h3>Grid Settings</h3>
+        <div class="setting-row">
+          <label for="gridSize">Grid Size:</label>
+          <input type="number" id="gridSize" min="5" max="100" value="24">
+          <span>px</span>
+        </div>
+        <div class="setting-row">
+          <label for="gridColor">Grid Color:</label>
+          <input type="color" id="gridColor" value="#ff0000">
+        </div>
+      </div>
+    </div>
+
+    <div class="shortcuts">
+      <h3>Keyboard Shortcuts</h3>
+      <ul>
+        <li><kbd>G</kbd> - Toggle grid overlay</li>
+        <li><kbd>M</kbd> - Toggle measure mode</li>
+        <li><kbd>C</kbd> - Check color contrast</li>
+        <li><kbd>ESC</kbd> - Exit current mode</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
