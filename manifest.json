@@ -1,22 +1,36 @@
 {
   "manifest_version": 3,
   "name": "Responsive Inspector",
-  "version": "1.0",
+  "version": "1.2",
   "description": "Visual debugging tools for responsive layouts",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "permissions": ["activeTab", "scripting"],
+  "permissions": ["activeTab", "scripting", "storage"],
   "background": {
     "service_worker": "background.js"
   },
   "action": {
-    "default_popup": "popup/popup.html"
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
   },
   "content_scripts": [{
     "matches": ["<all_urls>"],
-    "js": ["content.js"]
-  }]
+    "js": ["content.js"],
+    "css": ["content.css"]
+  }],
+  "commands": {
+    "toggle-grid": {
+      "description": "Toggle grid overlay"
+    },
+    "measure-mode": {
+      "description": "Toggle measurement mode"
+    }
+  }
 }
